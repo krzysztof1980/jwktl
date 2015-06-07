@@ -1,0 +1,8 @@
+repositories {
+    mavenCentral()
+    flatDir(dir: "../build/libs", name: "Output of compile task")
+}
+
+dependencies {
+    compile "de.tudarmstadt.ukp.jwktl:jwktl:latest.integration"
+}

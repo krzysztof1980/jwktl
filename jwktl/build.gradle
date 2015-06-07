@@ -35,3 +35,10 @@ processResources {
         expand('version': version)
     }
 }
+
+task updateTestData(type: GradleBuild, dependsOn: [jar]) {
+    buildFile = 'update_test_data.gradle'
+    tasks = ['updateTestData']
+    if (hasProperty("dumpFile"))
+        startParameter.projectProperties.dumpFile = dumpFile
+}

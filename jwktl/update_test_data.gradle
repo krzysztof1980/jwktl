@@ -1,0 +1,24 @@
+//// Uncomment, if the logic should be moved direct to this script
+//buildscript {
+//    repositories {
+//        flatDir(dir: "$buildDir/libs", name: "Output of compile task")
+//    }
+//
+//    dependencies {
+//        classpath ":$name:latest.integration"
+//    }
+//}
+
+import de.tudarmstadt.ukp.jwktl.build.tasks.TestDataUpdater
+
+task updateTestData {
+
+    final PROP_DUMP_FILE = "dumpFile"
+
+    inputs.property(PROP_DUMP_FILE, dumpFile)
+
+    doLast {
+        logger.quiet "Dump file: $dumpFile"
+        new TestDataUpdater(file('src/test/resources/articles-de'), logger).updateTestData(file(dumpFile))
+    }
+}
