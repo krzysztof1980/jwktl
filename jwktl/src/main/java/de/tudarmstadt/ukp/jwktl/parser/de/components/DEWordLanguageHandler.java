@@ -33,7 +33,7 @@ import de.tudarmstadt.ukp.jwktl.parser.util.ParsingContext;
 public class DEWordLanguageHandler extends DEBlockHandler {
 
 	/** language regular expression pattern*/
-	private static final Pattern LANGUAGE_PATTERN = Pattern.compile("^==\\s*([^=].*)\\s*\\(?\\{\\{\\s*Sprache\\s*\\|\\s*([^}]+?)\\s*\\}\\}");
+	private static final Pattern LANGUAGE_PATTERN = Pattern.compile("^==\\s*([^=].*?)\\s*\\(?\\{\\{\\s*Sprache\\s*\\|\\s*([^}]+?)\\s*\\}\\}");
 	
 	protected String lemma;
 	protected ILanguage language;
